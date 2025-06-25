@@ -6,4 +6,5 @@ import io.micronaut.data.repository.CrudRepository;
 
 @Repository
 public interface WeatherEntryRepository extends CrudRepository<WeatherEntry, Long> {
+    Iterable<WeatherEntry> findAllByOrderByTimestampDesc();
 }

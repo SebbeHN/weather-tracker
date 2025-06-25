@@ -24,4 +24,9 @@ public class WeatherController {
 
         return weatherService.saveWeather(response);
     }
+
+    @Get("/history")
+    public Iterable<WeatherEntry> getWeatherHistory() {
+        return weatherService.getHistory();
+    }
 }

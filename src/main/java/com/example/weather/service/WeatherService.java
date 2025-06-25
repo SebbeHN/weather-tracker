@@ -52,6 +52,10 @@ public class WeatherService {
         return repository.save(entry);
     }
 
+    public Iterable<WeatherEntry> getHistory() {
+        return repository.findAllByOrderByTimestampDesc();
+    }
+
     public boolean isExtremeWeather(WeatherResponse response) {
         double temp = response.getMain().getTemp();
         return temp >= 30 || temp <= -15;
