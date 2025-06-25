@@ -1,0 +1,66 @@
+# === Java / Gradle / Micronaut ===
+*.class
+*.jar
+*.war
+*.ear
+*.log
+hs_err_pid*
+.recommenders/
+bin/
+build/
+.gradle/
+out/
+target/
+dependency-cache/
+.classpath
+.project
+.settings/
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# === OS-specifika filer ===
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === Secrets / Environment ===
+application.yml
+application-local.yml
+.env
+*.env
+secrets.*
+key.*
+*.keystore
+*.jks
+*.p12
+
+# === Test Reports / Coverage ===
+test-output/
+jacoco.exec
+coverage/
+reports/
+*.lcov
+
+# === Logs / Temp ===
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# === Node.js (framtida frontend) ===
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+.vscode/
+
+# === OS Backup / Swap ===
+*.orig
+*~
+

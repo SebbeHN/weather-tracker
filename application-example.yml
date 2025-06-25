@@ -1,0 +1,25 @@
+micronaut:
+  application:
+    name: weather-tracker
+
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/weatherdb
+    username: your_user
+    password: your_password
+    driverClassName: org.postgresql.Driver
+
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
+
+weather:
+  api:
+    base-url: https://api.openweathermap.org/data/2.5
+    key: YOUR_API_KEY_HERE
+    default-city: Stockholm
+    units: metric
