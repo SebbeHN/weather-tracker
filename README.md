@@ -31,7 +31,7 @@ Micronaut-baserad applikation som hämtar aktuellt väder från OpenWeatherMap o
 ### 1. Klona projektet
 
 ```bash
-git clone https://github.com/<ditt-användarnamn>/weather-tracker.git
+git clone https://github.com/SebbeHN/weather-tracker.git
 cd weather-tracker
 ```
 
