@@ -1,9 +1,9 @@
 package com.example.weather.controller;
 
-
 import com.example.weather.model.WeatherEntry;
 import com.example.weather.model.WeatherResponse;
 import com.example.weather.service.WeatherService;
+import com.example.weather.repository.WeatherEntryRepository;
 import io.micronaut.http.annotation.*;
 import io.micronaut.scheduling.annotation.ExecuteOn;
 import io.micronaut.scheduling.TaskExecutors;
@@ -14,8 +14,12 @@ import jakarta.inject.Inject;
 public class WeatherController {
 
     @Inject
-    WeatherService weatherService;
+    private WeatherService weatherService;
 
+    @Inject
+    private WeatherEntryRepository weatherEntryRepository;
+
+    /** Hämtar väder för valfri stad (eller default) och sparar posten */
     @Get
     public WeatherEntry getAndStoreWeather(@QueryValue(defaultValue = "") String city) {
         WeatherResponse response = city.isBlank()
@@ -25,8 +29,9 @@ public class WeatherController {
         return weatherService.saveWeather(response);
     }
 
+    /** 🆕 Returnerar hela väderhistoriken, sorterad nyast först */
     @Get("/history")
-    public Iterable<WeatherEntry> getWeatherHistory() {
-        return weatherService.getHistory();
+    public Iterable<WeatherEntry> getHistory() {
+        return weatherEntryRepository.findAllOrderByTimestampDesc();
     }
 }

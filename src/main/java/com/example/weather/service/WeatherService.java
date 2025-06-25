@@ -3,6 +3,7 @@ package com.example.weather.service;
 import com.example.weather.client.WeatherClient;
 import com.example.weather.model.WeatherEntry;
 import com.example.weather.model.WeatherResponse;
+import com.example.weather.repository.WeatherEntryRepository;
 import jakarta.inject.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,7 +54,7 @@ public class WeatherService {
     }
 
     public Iterable<WeatherEntry> getHistory() {
-        return repository.findAllByOrderByTimestampDesc();
+        return repository.findAllOrderByTimestampDesc();
     }
 
     public boolean isExtremeWeather(WeatherResponse response) {
