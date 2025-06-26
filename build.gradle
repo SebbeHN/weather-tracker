@@ -26,6 +26,8 @@ dependencies {
     implementation("org.postgresql:postgresql")
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut.aws:micronaut-aws-sdk-v2")
+    implementation("software.amazon.awssdk:sns")
+    implementation("software.amazon.awssdk:sns:2.25.24")
     runtimeOnly("ch.qos.logback:logback-classic")
 
     runtimeOnly("org.yaml:snakeyaml:2.2")

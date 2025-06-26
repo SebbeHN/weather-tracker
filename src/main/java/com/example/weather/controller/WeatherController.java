@@ -4,6 +4,7 @@ import com.example.weather.model.WeatherEntry;
 import com.example.weather.model.WeatherResponse;
 import com.example.weather.service.WeatherService;
 import com.example.weather.repository.WeatherEntryRepository;
+import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.*;
 import io.micronaut.scheduling.annotation.ExecuteOn;
 import io.micronaut.scheduling.TaskExecutors;
@@ -34,4 +35,11 @@ public class WeatherController {
     public Iterable<WeatherEntry> getHistory() {
         return weatherEntryRepository.findAllOrderByTimestampDesc();
     }
+
+    @Get("/test-alert")
+    public HttpResponse<String> sendTestAlert() {
+        weatherService.sendTestAlert(); // ny metod i WeatherService
+        return HttpResponse.ok("✅ Testnotis skickad via SNS!");
+    }
+
 }

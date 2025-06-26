@@ -20,6 +20,14 @@ jpa:
 weather:
   api:
     base-url: https://api.openweathermap.org/data/2.5
-    key: 080803d651ce6104eb0eff5fc986a9ed
+    key: ${WEATHER_API_KEY}
     default-city: Stockholm
     units: metric
+
+aws:
+  region: eu-north-1
+  credentials:
+    access-key-id: ${AWS_ACCESS_KEY_ID}
+    secret-access-key: ${AWS_SECRET_ACCESS_KEY}
+  sns:
+    topic-arn: ${AWS_SNS_TOPIC_ARN}
